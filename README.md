@@ -1,55 +1,56 @@
 # OSAI-browser
-OSAI-browser: A P2P Browser with World Support
+- OSAI-browser is a new type of browser, designed with peer-to-peer (P2P) and AI culclation functionality at its core.
+- apply to add tool as WORLD
+## Key Features:
 
-OSAI-browser is a new type of browser, designed with peer-to-peer (P2P) functionality at its core.
+- P2P Functionality: OSAI-browser is built around a P2P network, allowing for decentralized content sharing and access.
+- World Support: Additional content is managed as "Worlds."
+- Easy World Import: Add new "Worlds" by simply dragging and dropping files into the "World Import" area.
+- p2p file transfer (correspondence only "cargo tauri dev" maybe path issue)
+- AI caluclation platform
 
-Key Features:
+## Technical Details
 
-    P2P Functionality: OSAI-browser is built around a P2P network, allowing for decentralized content sharing and access.
-    World Support: Additional content is managed as "Worlds."
-    Easy World Import: Add new "Worlds" by simply dragging and dropping files into the "World Import" area.
-    iframe Mode: Seamlessly switch between local "Worlds" and regular websites (like Google) using the iframe mode. Local files can be accessed without disabling iframes.
+- Technology Stack: rust, tauri, (in p2o):pnet
 
-Technical Details:
+## compile
+in root:
 
-    Technology Stack: rust, tauri, (in p2o):pnet
-    Installation: exe file only
+```js
+    cargo tauri build
+```
+## Current Status
 
-rust:
-    in root: cargo tauri build
+P2P functionality is implemented.
+file transfer is implemented.
+    
+# How to use
+- 1,luanch server
+select p2p -> "start server"
+make share dir & cp files.json
 
-Current Status:
+- file transfer(only dev mode)
+one by one device luanch OSAI-browser or
 
-    P2P functionality is implemented.
-    (TODO: later)
+one host luanch (please use "1234" port)
+```python3
+    python3 -m htto.server 1234
+```
+    and then use [dummy_signal](https://github.com/amyoshi-hub/OSAI/tree/main/client/dummy_signal):
+```c
+    gcc start_ser.c -o test
+    sudo "test your_ip" "port"
+```
+click display node -> loadFileList -> click filename
 
-Important Notes (Windows):
+- AI culclation
+this requre superuser
+and only luanch server
 
-    On Windows, a separate packet monitoring driver may be required.
-    Currently, P2P functionality requires administrator privileges.
-p2p function:
-    ->need sudo permission<-
-file drag install:
-    please include "index.html"
-
-$comment:
-    currently app lunguege is japanease sorry!
-
-p2pの機能を持ったブラウザである
-<p>
-追加コンテンツはworldとして扱う
-<p>
-worldにはworld importにファイルをドラッグすることで追加することができる
-<p>
-iframe mode:
-<p>
-iframeからno iframeにすることでurlからgoogleなどに飛べる。ローカルのファイルなら切らなくて良い
-<p>
-TODO:動機、技術スタック、install方法などを書く
-<p>
-TODO2:windowsだとfileのdragがおかしいので修正するか、<input type="file">にする
-<p>
-windowsは別途のパケット監視ドライバを入れないと動かないかも
-<p>
-今のところp2p機能は管理者権限がいる
-
+## Important Notes
+On Windows, a separate packet monitoring driver may be required.
+Currently, P2P functionality requires administrator privileges.
+## p2p function
+ need sudo permission
+## file drag install:
+please include "index.html" in zip file
